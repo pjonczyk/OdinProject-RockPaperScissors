@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors Game</title>
+        <link rel="stylesheet" href="./style.css">
         <script src="javascript.js"></script>
     </head>
     <body>
-
+        <div class="header">
+            <h1 class="headerText">Rock Paper Scissors Game</h1>
+        </div>
+        <div class="buttons">
+            <button onclick="playerAction('Rock')">Rock</button>
+            <button onclick="playerAction('Paper')">Paper</button>
+            <button onclick="playerAction('Scissors')">Scissors</button>
+        </div>
+        <div class="resultDisplay"></div>
+        <table class="resultTable">
+            <tr>
+                <th>Player</th>
+                <th>Result</th>
+                <th>Computer</th>
+            </tr>
+        </table>
     </body>
 </html>

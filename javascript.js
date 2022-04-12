@@ -2,6 +2,8 @@ const rock = "Rock";
 const paper = "Paper";
 const scissors = "Scissors";
 
+let playerName = "";
+
 function computerPlay() {
 
     let random = getRandomInt(3);
@@ -44,15 +46,23 @@ function playRound(playerSelection, computerSelection) {
     return "Draw!"
 }
 
-function game() {
-    playerWins = 0;
-    computerWins = 0;
-    draws = 0;
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("What's your selection?");
-        let computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
-    }
-}
+function playerAction(playerSelection) {
+    const computerSelection = computerPlay();
+    let result = playRound(playerSelection, computerSelection);
+    const resultDisplay = document.querySelector('.resultDisplay');
+    resultDisplay.textContent = result;
+    const resultTable = document.querySelector('.resultTable');
+    const tr = document.createElement('tr');
+    const leftTh = document.createElement('th');
+    leftTh.textContent = playerSelection;
+    const centerTh = document.createElement('th');
+    const rightTh = document.createElement('th');
+    rightTh.textContent = computerSelection;
 
-game();
+    tr.appendChild(leftTh);
+    tr.appendChild(centerTh);
+    tr.appendChild(rightTh);
+
+    resultTable.appendChild(tr);
+
+}
