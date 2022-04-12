@@ -1,10 +1,71 @@
 body {
-    background-color: #1F2937;
+    font-family: "Roboto", sans-serif;
+    background-color: #9AB8BA;
 }
 
 .headerText {
-    color: #F9FAF8;
+    color: #045256;
     font-size: 48px;
-    font-weight: bold;
+    font-weight: 900;
     text-align: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+button {
+   /*background-color: #DDF7F8;*/
+   background-color: #9AB8BA;
+   border: 5px solid #045256;
+    padding: 15px 32px;
+        border-radius: 10px;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.resultTable {
+    border-collapse: collapse;
+    width: 100%;
+    color: #045256;
+    margin-top: 50px;
+    font-size: 20px;
+            table-layout: fixed;
+}
+
+.resultTable td {
+    text-align: center;
+}
+
+.resultTable td,
+.resultTable th {
+    padding: 8px;
+}
+/*
+.resultTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+*/
+
+.resultTable tr:hover {
+    background-color: #ddd;
+}
+
+.resultTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.resultTable tr {
+    border-bottom: 1px solid #0B1516;
 }

@@ -34,13 +34,13 @@ function playRound(playerSelection, computerSelection) {
     if ((playerSelection == rock && computerSelection == scissors)
         || (playerSelection == paper && computerSelection == rock)
         || (playerSelection == scissors && computerSelection == paper)) {
-        return `You Win! ${playerSelection} beats ${computerSelection}`;
+        return 'You Win!';
     }
 
     if ((playerSelection == scissors && computerSelection == rock)
         || (playerSelection == rock && computerSelection == paper)
         || (playerSelection == paper && computerSelection == scissors)) {
-        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        return 'You Lose!';
     }
 
     return "Draw!"
@@ -49,20 +49,15 @@ function playRound(playerSelection, computerSelection) {
 function playerAction(playerSelection) {
     const computerSelection = computerPlay();
     let result = playRound(playerSelection, computerSelection);
-    const resultDisplay = document.querySelector('.resultDisplay');
-    resultDisplay.textContent = result;
-    const resultTable = document.querySelector('.resultTable');
-    const tr = document.createElement('tr');
-    const leftTh = document.createElement('th');
-    leftTh.textContent = playerSelection;
-    const centerTh = document.createElement('th');
-    const rightTh = document.createElement('th');
-    rightTh.textContent = computerSelection;
+    let resultTable = document.querySelector('.resultTable');
+    let row = resultTable.insertRow();
+    insertCell(row, -1, playerSelection);
+    insertCell(row, -1, result);
+    insertCell(row, -1, computerSelection);
+}
 
-    tr.appendChild(leftTh);
-    tr.appendChild(centerTh);
-    tr.appendChild(rightTh);
-
-    resultTable.appendChild(tr);
-
+function insertCell(row, position, content) {
+    let cell = row.insertCell(position);
+    let newText = document.createTextNode(content);
+    cell.appendChild(newText);
 }
